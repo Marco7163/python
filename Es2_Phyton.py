@@ -50,3 +50,21 @@ def prezzo_medioQ(prezzi_prodotti,product1):
 print("\nPrezzo massimo prodotto e giorni in cui si verifica:")
 product1=input("Inserisci prodotto:")
 prezzo_medioQ(prezzi_prodotti, product1)
+
+def prezzo_medioW(prezzi_prodotti,product1):
+
+    prezzoMin=999999
+
+    for prodotto, *altro in prezzi_prodotti:
+        if prodotto==product:
+            for giorno, prezzo in altro:
+                if prezzoMin>prezzo:
+                    prezzoMin=prezzo
+            print("Il prezzo minimo è di:",prezzoMin)
+            for giorno, prezzo in altro:
+                if prezzoMin==prezzo:
+                    print("Nel giorno:",giorno)
+
+print("\nPrezzo minimo prodotto e giorni in cui si verifica:")
+product1=input("Inserisci prodotto:")
+prezzo_medioW(prezzi_prodotti, product1)
